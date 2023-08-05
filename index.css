@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    border: border-box;
+}
+
+.navbar {
+    height: 60px;
+    background-color: #131921;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav-logo {
+    height: 50px;
+    width: 100px;
+}
+
+.logo {
+    height: 50px;
+    width: 100%;
+    background-image: url("./images/amazon_logo.png");
+    background-size: cover;
+}
+
+.border{
+    border: 1.5px solid transparent;
+    /* border-radius: 10px; */
+}
+
+.border:hover{
+    border: 1.5px solid white;
+}
+
+/* navbar -- address box  */
+
+.add-first{
+    font-size: 0.65rem;
+    /* margin-left: 10px; */
+}
+
+.add-second{
+    font-size: 0.85rem;
+}
+
+.nav-location{
+    display: flex;
+}
+
+
+/* nav --- search box */
+
+.nav-search{
+    display: flex;
+    /* background-color: aqua; */
+    height: 40px;
+    width: 700px;
+    border: none;
+}
+
+.nav-select{
+    text-align: center;
+    width: 60px;
+    border: none;
+    height: 40px;
+    background-color: #DADADA;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  
+}
+
+.search-input{
+    width: 100%;
+    font-size: 0.85rem;
+    border: none;
+
+}
+
+.nav-search:hover{
+    border: 2px solid orange;
+    border-radius: 5px;
+}
+
+.search-icon{
+    display: flex;
+    width: 45px;
+    /* height: 40; */
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 1.5rem;
+    background-color: #febd68;
+    color: black;
+
+}
+
+
+/* nav  signin box */
+
+
+span{
+    font-size: 0.8rem;
+}
+
+.nav-p{
+    font-weight: 550;
+}
+
+/* nav cart */
+
+.nav-cart i {
+    font-size: 30px;
+}
+
+.nav-cart{
+    font-size: 0.8rem;
+    font-weight: 650;
+}
+
+/* panel */
+
+.panel{
+    background-color: #222f3d;
+    display: flex;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    color: white;
+    height: 40px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.panel-ops{
+    width: 70%;
+
+}
+
+.panel-ops p {
+    display: inline;
+    margin-left: 15px;
+
+}
+
+.panel-icon{
+    margin-left: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* hero  section */
+
+.hero-section{
+    width: 100%;
+    height: auto;
+}
+
+.hero-img{
+    width: 100%;
+    height: 350px;
+}
+
+.image{
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* shop section */
+
+.shop-section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items:flex-end;
+    flex-wrap: wrap;
+    background-color: #e2e7e6;
+}
+
+.box{
+    width: 23%;
+    height: 350px;
+    background-color: white;
+    padding: 20px 0px 15px ;
+    margin-top: 10px;
+}
+
+.box-img{
+    background-size: cover;
+    height: 300px;
+    margin-top: 8px;
+    
+}
+
+.box-content{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.box-link {
+    margin-top: 10px;
+}
+
+/* footer section */
+
+footer{
+    margin-top: 20px;
+}
+
+.panel-1{
+    background-color: #131921;
+    height: 50px;
+    font-size: 0.85rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel-2{
+    background-color: #222f3d;
+    height: 300px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+ul p{
+    font-size: 20px;
+}
+
+ul a{
+    display: block;
+    font-size: 0.75rem;
+    margin: 10px;
+    color: #dddddd;
+}
+
+.panel-3{
+    background-color: #222f3d;
+    color: #DADADA;
+    border-top: 0.5px solid white;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-panel-3{
+    height: 50px;
+    width: 100px;
+    background-image: url("./images/amazon_logo.png");
+    background-size: cover;
+}
+
+.panel-4{
+    height: 60px;
+    background-color: #131921;
+    color: white;
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.text-footer{
+    padding-top: 20px;
+}
+
+.copyright{
+    padding-top: 3px;
+}
