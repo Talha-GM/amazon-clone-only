@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon - Media and Info</title>
+    <link rel="stylesheet" href="media.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header with unchanged Amazon Navbar -->
+    <header id="main-header">
+        <div class="navbar">
+            <div class="nav-logo border" id="logo-container">
+                <a href="index.html" class="logo-anchor" title="Amazon Home">
+                    <img src="./images/amazon_logo.png" alt="Amazon Logo" class="header-logo-image">
+                </a>
+            </div>
+            <div class="nav-address border">
+                <p class="add-first">Deliver to</p>
+                <div class="nav-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="add-second">Pakistan</p>
+                </div>
+            </div>
+            <div class="nav-search">
+                <select class="nav-select">
+                    <option>All</option>
+                    <option>Prime Video</option>
+                    <option>Amazon Devices</option>
+                    <option>Electronics</option>
+                </select>
+                <input class="search-input" placeholder="Search Amazon" type="text">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <a href="register.html" class="nav-signin border" title="Go to Registration">
+                <p><span>Hello, sign in</span></p>
+                <p class="nav-p">Account &amp; Lists</p>
+            </a>
+            <div class="nav-return border">
+                <p><span>Returns</span></p>
+                <p class="nav-p">&amp; Orders</p>
+            </div>
+            <div class="nav-cart border">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Cart</span>
+            </div>
+        </div>
+
+        <!-- Secondary Panel: Navigation bar linking all 6 pages -->
+        <div class="panel" id="navigation-panel">
+            <div class="panel-icon">
+                <i class="fa-solid fa-bars"></i>
+                All
+            </div>
+            <nav class="panel-ops">
+                <a href="index.html" class="panel-link">Home</a>
+                <a href="media.html" class="panel-link active-link">Media &amp; Info</a>
+                <a href="register.html" class="panel-link">Register</a>
+                <a href="services.html" class="panel-link">Services</a>
+                <a href="portfolio.html" class="panel-link">Portfolio</a>
+                <a href="contact.html" class="panel-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner with Background Image -->
+    <div class="media-banner">
+        <h1>Amazon Prime Media &amp; Product Info</h1>
+        <p>Watch latest trailers, listen to sample audio, and compare Amazon smart devices.</p>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="content-wrapper">
+
+        <!-- Multimedia Section: Float Left and Float Right Layout -->
+        <h2 class="section-title">Prime Multimedia Section</h2>
+        <div class="multimedia-container">
+
+            <!-- Video Box (Floated Left) -->
+            <div class="video-box">
+                <div class="badge-tag">Featured Video</div>
+                <h3>Amazon Prime Trailer</h3>
+                <video controls poster="./images/hero_image.jpg">
+                    <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>Official promotional trailer for upcoming Amazon Prime video releases and series.</p>
+            </div>
+
+            <!-- Audio Box (Floated Right) -->
+            <div class="audio-box">
+                <div class="badge-tag">Audio Sample</div>
+                <h3>Amazon Music &amp; Audible Sample</h3>
+                <div class="audio-image">
+                    <img src="./images/box4_image.jpg" alt="Amazon Music Album Art">
+                </div>
+                <audio controls>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                </audio>
+                <p>Listen to sample soundtrack streaming on Amazon Music HD.</p>
+            </div>
+
+            <!-- Clearfix to clear floats -->
+            <div class="clear-both"></div>
+        </div>
+
+        <!-- Product Image Section -->
+        <h2 class="section-title">Featured Device</h2>
+        <div class="device-card">
+            <img src="./images/box3_image.jpg" alt="Amazon Echo Studio" class="device-photo">
+            <div class="device-info">
+                <h3>Amazon Echo Studio Smart Speaker</h3>
+                <p>High-fidelity smart speaker with 3D audio, Dolby Atmos, and built-in Alexa voice assistant. Perfect for living rooms and home offices.</p>
+                <span class="price-tag">Price: $199.99</span>
+            </div>
+            <div class="clear-both"></div>
+        </div>
+
+        <!-- Lists Section: Ordered List and Unordered List -->
+        <h2 class="section-title">Media Rankings &amp; Prime Perks</h2>
+        <div class="lists-wrapper">
+            
+            <!-- Ordered List (Left Float) -->
+            <div class="list-column">
+                <h3>Top 5 Trending Shows on Prime</h3>
+                <ol>
+                    <li>The Lord of the Rings: The Rings of Power</li>
+                    <li>The Boys (Season 4)</li>
+                    <li>Reacher (Season 2)</li>
+                    <li>Fallout (Season 1)</li>
+                    <li>The Summer I Turned Pretty</li>
+                </ol>
+            </div>
+
+            <!-- Unordered List (Right Float) -->
+            <div class="list-column">
+                <h3>Prime Membership Benefits</h3>
+                <ul>
+                    <li>Free and fast shipping on millions of items</li>
+                    <li>Unlimited streaming of movies and TV episodes</li>
+                    <li>Ad-free listening to 100 million songs</li>
+                    <li>Free games and in-game loot every month</li>
+                    <li>Exclusive deals during Prime Day</li>
+                </ul>
+            </div>
+
+            <div class="clear-both"></div>
+        </div>
+
+        <!-- Data Table Section -->
+        <h2 class="section-title">Amazon Plans Comparison Table</h2>
+        <div class="table-container">
+            <table class="devices-table">
+                <caption>Comparison of Amazon Streaming and Service Plans</caption>
+                <thead>
+                    <tr>
+                        <th>Plan Name</th>
+                        <th>Monthly Price</th>
+                        <th>Video Quality</th>
+                        <th>Audio Quality</th>
+                        <th>Screens at Once</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Prime Video Only</td>
+                        <td>$8.99</td>
+                        <td>HD (1080p)</td>
+                        <td>Stereo</td>
+                        <td>2 Screens</td>
+                    </tr>
+                    <tr class="table-highlight">
+                        <td>Amazon Prime (Full)</td>
+                        <td>$14.99</td>
+                        <td>4K Ultra HD</td>
+                        <td>Dolby Atmos</td>
+                        <td>3 Screens</td>
+                    </tr>
+                    <tr>
+                        <td>Prime Student</td>
+                        <td>$7.49</td>
+                        <td>HD (1080p)</td>
+                        <td>Stereo</td>
+                        <td>2 Screens</td>
+                    </tr>
+                    <tr>
+                        <td>Amazon Music Unlimited</td>
+                        <td>$10.99</td>
+                        <td>N/A (Music Only)</td>
+                        <td>HD / Ultra HD Audio</td>
+                        <td>1 Screen</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Free Trial Available</td>
+                        <td colspan="3">All plans come with a 30-day free trial. Cancel anytime.</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <!-- Hidden note demonstrating display: none -->
+        <div class="hidden-note">
+            <p>Admin note: This content is hidden using display: none for testing.</p>
+        </div>
+
+    </main>
+
+    <!-- Floating Back to Top Button (demonstrating position: fixed) -->
+    <a href="#" class="floating-btn" title="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i> Top
+    </a>
+
+    <!-- Footer -->
+    <footer class="media-footer">
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="media.html">Media and Info</a>
+            <a href="register.html">Register</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <p class="copyright-text">&copy; 2026 Amazon Clone - Web Technologies Assignment 1</p>
+    </footer>
+
+</body>
+</html>
