@@ -1,0 +1,461 @@
+/* =========================================================
+   REGISTER PAGE STYLESHEET (register.css)
+   Practising:
+   1. Attribute Selectors (input[type=...], [required], [readonly], [disabled])
+   2. Combinators (Descendant ' ', Child '>', Adjacent sibling '+')
+   3. Pseudo-classes (:hover, :focus, :valid, :invalid, :checked, :disabled)
+   4. Pseudo-elements (::after, ::placeholder, ::selection)
+   5. Restyled Navigation Bar
+   ========================================================= */
+
+/* --- 1. Base Setup --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Pseudo-element: ::selection */
+::selection {
+    background-color: #ffd814;
+    color: #111111;
+}
+
+body {
+    background-color: #ffffff;
+    color: #111111;
+}
+
+/* --- 2. Amazon Navbar (Unchanged Header & Panel) --- */
+.navbar {
+    height: 60px;
+    background-color: #131921;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav-logo {
+    height: 50px;
+    width: 100px;
+}
+
+.header-logo-image {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    margin-top: 5px;
+}
+
+.border {
+    border: 1.5px solid transparent;
+    padding: 5px 8px;
+    border-radius: 2px;
+}
+
+.border:hover {
+    border: 1.5px solid white;
+}
+
+/* Navbar -- Address box */
+.add-first {
+    font-size: 0.65rem;
+    color: #cccccc;
+}
+
+.add-second {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.nav-location {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Nav --- Search box */
+.nav-search {
+    display: flex;
+    height: 40px;
+    width: 620px;
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.nav-select {
+    text-align: center;
+    width: 60px;
+    border: none;
+    height: 40px;
+    background-color: #dadada;
+    font-size: 0.82rem;
+    cursor: pointer;
+}
+
+.search-input {
+    width: 100%;
+    font-size: 0.95rem;
+    border: none;
+    padding: 0 10px;
+    outline: none;
+}
+
+.nav-search:hover {
+    outline: 2px solid #febd68;
+}
+
+.search-icon {
+    display: flex;
+    width: 48px;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    background-color: #febd68;
+    color: #111827;
+    cursor: pointer;
+}
+
+.search-icon:hover {
+    background-color: #f3a847;
+}
+
+/* Nav -- Signin & Return */
+.nav-signin {
+    color: white;
+    display: block;
+    text-decoration: none;
+}
+
+span {
+    font-size: 0.8rem;
+}
+
+.nav-p {
+    font-weight: 700;
+}
+
+/* Nav -- Cart */
+.nav-cart {
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.nav-cart i {
+    font-size: 26px;
+}
+
+/* Secondary Navigation Panel */
+.panel {
+    background-color: #222f3d;
+    display: flex;
+    align-items: center;
+    color: white;
+    height: 42px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0 15px;
+}
+
+.panel-icon {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-right: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.panel-ops {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.panel-link {
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.panel-link:hover {
+    border-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.active-link {
+    border-color: #febd68;
+    background-color: rgba(254, 189, 104, 0.2);
+    color: #febd68;
+    font-weight: 700;
+}
+
+/* --- 3. Main Form Container --- */
+.main-content {
+    width: 100%;
+    padding: 30px 15px;
+}
+
+/* Combinator: Descendant combinator '.main-content .form-card' */
+.main-content .form-card {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    padding: 25px 30px;
+    background-color: #ffffff;
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #111111;
+}
+
+.form-subtitle {
+    font-size: 13px;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+/* --- 4. Combinators for Form Layout --- */
+/* Combinator: Child combinator '.signup-form > .field-group' */
+.signup-form > .field-group {
+    margin-bottom: 15px;
+}
+
+.field-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #111111;
+}
+
+/* Pseudo-element: ::after for red required asterisk */
+.req-label::after {
+    content: " *";
+    color: #cc0000;
+}
+
+/* --- 5. Attribute Selectors for Form Controls --- */
+/* Targeting inputs by their type attribute */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+input[type="url"],
+input[type="time"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #a6a6a6;
+    border-radius: 4px;
+    font-size: 13px;
+    outline: none;
+    background-color: #ffffff;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Pseudo-element: ::placeholder */
+input::placeholder,
+textarea::placeholder {
+    color: #888888;
+    font-style: italic;
+}
+
+/* --- 6. Pseudo-classes: :focus, :valid, :invalid, :disabled --- */
+/* Pseudo-class: :focus (Amazon orange glow outline) */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="url"]:focus,
+input[type="time"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228, 121, 17, 0.5);
+}
+
+/* Pseudo-classes: :valid and :invalid on required fields */
+input[required]:focus:valid {
+    border-color: #2e7d32; /* Green for valid input */
+}
+
+input[required]:focus:invalid {
+    border-color: #d32f2f; /* Red for invalid input */
+}
+
+/* Pseudo-class: :disabled on input[disabled] */
+input[disabled] {
+    background-color: #f0f0f0;
+    color: #888888;
+    cursor: not-allowed;
+    border: 1px dashed #cccccc;
+}
+
+/* Attribute selector on input[readonly] */
+input[readonly] {
+    background-color: #f7f7f7;
+    color: #333333;
+    cursor: default;
+}
+
+/* --- 7. Special Input Controls (Color, Range, File, Radio, Checkbox) --- */
+input[type="color"] {
+    width: 45px;
+    height: 32px;
+    padding: 2px;
+    border: 1px solid #a6a6a6;
+    border-radius: 3px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+input[type="range"] {
+    width: 100%;
+    cursor: pointer;
+}
+
+input[type="file"] {
+    font-size: 12px;
+    padding: 5px 0;
+}
+
+.radio-group {
+    margin-top: 5px;
+}
+
+.radio-group label {
+    display: inline-block;
+    font-weight: normal;
+    margin-right: 15px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* Pseudo-class: :checked on radio and checkbox */
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+    accent-color: #e77600;
+}
+
+.checkbox-group {
+    margin-bottom: 12px;
+}
+
+.checkbox-group label {
+    font-size: 12px;
+    color: #333333;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.checkbox-group input {
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+/* --- 8. Submit and Reset Buttons --- */
+.button-row {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Amazon Yellow Button using Attribute Selector */
+input[type="submit"].btn-submit {
+    flex: 2;
+    background-color: #ffd814;
+    border: 1px solid #fcd200;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+}
+
+/* Pseudo-class: :hover on submit button */
+input[type="submit"].btn-submit:hover {
+    background-color: #f7ca00;
+}
+
+input[type="reset"].btn-reset {
+    flex: 1;
+    background-color: #ffffff;
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+input[type="reset"].btn-reset:hover {
+    background-color: #f7fafa;
+}
+
+/* --- 9. Bottom Notice & Footer --- */
+.card-bottom {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e7e7e7;
+    font-size: 12px;
+    text-align: center;
+}
+
+.card-bottom a {
+    color: #0066c0;
+    text-decoration: none;
+}
+
+.card-bottom a:hover {
+    text-decoration: underline;
+    color: #c45500;
+}
+
+.reg-footer {
+    border-top: 1px solid #e7e7e7;
+    padding: 25px 15px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.footer-links a {
+    color: #0066c0;
+    font-size: 12px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    font-size: 11px;
+    color: #555555;
+    margin-top: 10px;
+}
