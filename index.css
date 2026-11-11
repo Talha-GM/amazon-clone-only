@@ -240,6 +240,12 @@ span {
     gap: 8px;
 }
 
+/* Active nav link — shared across all pages */
+.active-nav {
+    color: #febd68;
+    font-weight: 700;
+}
+
 /* Panel Links restyled for Home Page */
 .panel-link {
     color: #ffffff;

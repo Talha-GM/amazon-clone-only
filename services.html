@@ -3,61 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon Services - Assignment 2 (Part 2)</title>
+    <title>Amazon Services</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="services.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header>
+
+    <!-- Header with unchanged Amazon Navbar (copied from index.html) -->
+    <header id="main-header">
         <div class="navbar">
-            <div class="nav-logo border">
-                <a href="index.html"><div class="logo"></div></a>
-            </div>
-            <div class="nav-search">
-                <select class="nav-select"><option>All</option></select>
-                <input class="search-input" placeholder="Search Amazon Services" type="text">
-                <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-            </div>
-            <div class="nav-signin border">
-                <a href="register.html" style="color: inherit; text-decoration: none;">
-                    <p><span>Hello, sign in</span></p>
-                    <p class="nav-p">Account &amp; Lists</p>
+            <div class="nav-logo border" id="logo-container">
+                <a href="index.html" class="logo-anchor" title="Amazon Home">
+                    <img src="./images/amazon_logo.png" alt="Amazon Logo" class="header-logo-image">
                 </a>
             </div>
-        </div>
-        <div class="panel">
-            <div class="panel-icon"><i class="fa-solid fa-bars"></i> All</div>
-            <div class="panel-ops">
-                <a href="index.html">Home</a>
-                <a href="media.html">Media &amp; Info</a>
-                <a href="register.html">Register</a>
-                <a href="services.html" class="active-nav">Services</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="contact.html">Contact</a>
+            <div class="nav-address border">
+                <p class="add-first">Deliver to</p>
+                <div class="nav-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p class="add-second">Pakistan</p>
+                </div>
             </div>
+            <div class="nav-search">
+                <select class="nav-select">
+                    <option>All</option>
+                    <option>Prime Video</option>
+                    <option>Amazon Devices</option>
+                    <option>Electronics</option>
+                </select>
+                <input class="search-input" placeholder="Search Amazon" type="text">
+                <div class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <a href="register.html" class="nav-signin border" title="Go to Registration">
+                <p><span>Hello, sign in</span></p>
+                <p class="nav-p">Account &amp; Lists</p>
+            </a>
+            <div class="nav-return border">
+                <p><span>Returns</span></p>
+                <p class="nav-p">&amp; Orders</p>
+            </div>
+            <div class="nav-cart border">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Cart</span>
+            </div>
+        </div>
+
+        <!-- Secondary Panel: Navigation bar linking all 6 pages -->
+        <div class="panel" id="navigation-panel">
+            <div class="panel-icon">
+                <i class="fa-solid fa-bars"></i>
+                All
+            </div>
+            <nav class="panel-ops">
+                <a href="index.html" class="panel-link">Home</a>
+                <a href="media.html" class="panel-link">Media &amp; Info</a>
+                <a href="register.html" class="panel-link">Register</a>
+                <a href="services.html" class="panel-link active-link">Services</a>
+                <a href="portfolio.html" class="panel-link">Portfolio</a>
+                <a href="contact.html" class="panel-link">Contact</a>
+            </nav>
         </div>
     </header>
 
-    <main style="max-width: 900px; margin: 60px auto; padding: 40px; background: white; border-radius: 8px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-        <i class="fa-solid fa-gears" style="font-size: 50px; color: #ff9900; margin-bottom: 20px;"></i>
-        <h1 style="margin-bottom: 15px; color: #131921;">Amazon Services (Part 2 - Assignment 2)</h1>
-        <p style="color: #555; font-size: 1.1rem; line-height: 1.6; margin-bottom: 25px;">
-            This page is scheduled for <strong>Assignment 2 (Pages 4 to 6)</strong>, demonstrating Flexbox card layouts with image, heading, text, link, transforms, and hover transitions.
-        </p>
-        <p style="color: #888; font-size: 0.95rem; margin-bottom: 30px;">
-            Completed Assignment 1 pages: <a href="index.html" style="color: #0066c0; font-weight: 600;">1. Home</a> | 
-            <a href="media.html" style="color: #0066c0; font-weight: 600;">2. Media &amp; Info</a> | 
-            <a href="register.html" style="color: #0066c0; font-weight: 600;">3. Register</a>
-        </p>
-        <a href="index.html" style="display: inline-block; background: #ffd814; color: #111; padding: 10px 24px; border-radius: 20px; text-decoration: none; font-weight: bold;">Return to Home</a>
-    </main>
+    <!-- PAGE HEADING -->
+    <div class="page-heading">
+        <h1><i class="fa-solid fa-cubes-stacked"></i> Amazon Services</h1>
+        <p>Explore everything Amazon has to offer — from shopping and streaming to cloud and delivery.</p>
+    </div>
 
+    <!-- SERVICES SECTION — Flexbox card layout -->
+    <section class="services-section">
+        <h2>Our Services</h2>
+
+        <!--
+            FLEXBOX LAYOUT:
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            align-items: stretch
+            gap: 20px
+        -->
+        <div class="services-container">
+
+            <!-- Card 1 -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1608889175638-9322300c46e8?w=600&q=80"
+                     alt="Amazon Prime delivery">
+                <div class="card-info">
+                    <h3><i class="fa-solid fa-crown"></i> Amazon Prime</h3>
+                    <p>Get unlimited free delivery, access to Prime Video, Prime Music, and exclusive deals with one membership.</p>
+                    <a href="register.html">Join Prime</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80"
+                     alt="AWS cloud servers">
+                <div class="card-info">
+                    <h3><i class="fa-solid fa-cloud"></i> Amazon Web Services</h3>
+                    <p>Build and host websites, apps, and databases on AWS — the world's leading cloud computing platform.</p>
+                    <a href="#">Explore AWS</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&q=80"
+                     alt="Fresh groceries">
+                <div class="card-info">
+                    <h3><i class="fa-solid fa-carrot"></i> Amazon Fresh</h3>
+                    <p>Order fresh groceries, fruits, and daily essentials online and get them delivered to your door fast.</p>
+                    <a href="#">Shop Fresh</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+                     alt="Amazon Business">
+                <div class="card-info">
+                    <h3><i class="fa-solid fa-briefcase"></i> Amazon Business</h3>
+                    <p>Special pricing, bulk buying, and account management tools designed for businesses of all sizes.</p>
+                    <a href="register.html">Register Business</a>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1543512214-318c7553f230?w=600&q=80"
+                     alt="Amazon Echo smart speaker">
+                <div class="card-info">
+                    <h3><i class="fa-solid fa-microchip"></i> Amazon Devices</h3>
+                    <p>Shop Echo speakers, Kindle readers, Fire TV sticks, and Ring cameras — all powered by Alexa.</p>
+                    <a href="portfolio.html">Shop Devices</a>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80"
+                     alt="Amazon warehouse">
+                <div class="card-info">
+                    <h3><i class="fa-solid fa-warehouse"></i> Fulfillment by Amazon</h3>
+                    <p>Sell on Amazon and let us handle storage, packing, and shipping from our fulfillment centers worldwide.</p>
+                    <a href="#">Start Selling</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- WHY AMAZON SECTION — Flexbox row of icons -->
+    <section class="why-section">
+        <h2>Why Choose Amazon?</h2>
+
+        <!--
+            FLEXBOX: display:flex, flex-wrap:wrap,
+            justify-content:center, gap:30px
+        -->
+        <div class="why-flex">
+
+            <div class="why-item">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h4>Fast Delivery</h4>
+                <p>Same-day and next-day delivery in many cities.</p>
+            </div>
+
+            <div class="why-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h4>Secure Shopping</h4>
+                <p>Your payments and data are always protected.</p>
+            </div>
+
+            <div class="why-item">
+                <i class="fa-solid fa-rotate-left"></i>
+                <h4>Easy Returns</h4>
+                <p>30-day hassle-free returns on most items.</p>
+            </div>
+
+            <div class="why-item">
+                <i class="fa-solid fa-headset"></i>
+                <h4>24/7 Support</h4>
+                <p>Customer service available around the clock.</p>
+            </div>
+
+            <div class="why-item">
+                <i class="fa-solid fa-tag"></i>
+                <h4>Best Prices</h4>
+                <p>Daily deals and lowest prices guaranteed.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <div class="panel-4">
-            <p style="padding-top: 20px;">&copy; 1996-2026, Amazon.com, Inc. or its affiliates &bull; Assignment 2 Preview</p>
+            <p>&copy; 1996-2026, Amazon.com, Inc. or its affiliates</p>
         </div>
     </footer>
+
 </body>
 </html>

@@ -1,0 +1,243 @@
+/* =====================================================
+   portfolio.css  —  Page 5: Amazon Portfolio
+   Assignment 2 | Web Technologies
+   CSS Concepts: CSS Grid, @keyframes Animations,
+                 Responsive Design (Media Queries)
+   ===================================================== */
+
+/* index.css handles the reset, body, a, p, and navbar styles.
+   This file only contains styles specific to the Portfolio page. */
+
+/* =====================================================
+   PAGE HEADING
+   ===================================================== */
+.page-heading {
+    background-color: #131921;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* ANIMATION applied to the page heading h1 */
+.page-heading h1 {
+    font-size: 2rem;
+    color: #ff9900;
+    margin-bottom: 10px;
+
+    /* Using the fadeIn @keyframes animation */
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+}
+
+.page-heading p {
+    font-size: 1rem;
+    color: #cccccc;
+
+    /* Slide down animation on the paragraph */
+    animation-name: slideDown;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-out;
+}
+
+/* =====================================================
+   @keyframes ANIMATIONS
+   ===================================================== */
+
+/* Animation 1: Fade in */
+@keyframes fadeIn {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Animation 2: Slide down from top */
+@keyframes slideDown {
+    0%   { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================================================
+   PRODUCT GALLERY SECTION
+   CSS GRID: display:grid, grid-template-columns,
+             gap, repeat(), auto-fit, minmax()
+   ===================================================== */
+.portfolio-section {
+    padding: 35px 25px;
+}
+
+.portfolio-section h2 {
+    font-size: 1.4rem;
+    color: #131921;
+    margin-bottom: 20px;
+    border-left: 5px solid #ff9900;
+    padding-left: 12px;
+}
+
+/* CSS GRID container — 4 columns on desktop */
+.product-grid {
+    display: grid;                                    /* CSS Grid */
+    grid-template-columns: repeat(4, 1fr);            /* 4 equal columns */
+    grid-template-rows: auto;                         /* Row height auto */
+    gap: 18px;                                        /* Space between cards */
+}
+
+/* Individual product card */
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-details {
+    padding: 12px;
+}
+
+.card-category {
+    font-size: 0.7rem;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.card-details h3 {
+    font-size: 0.9rem;
+    color: #0f1111;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.card-details p {
+    font-size: 0.78rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Star rating */
+.stars {
+    color: #ff9900;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+}
+
+.review-count {
+    font-size: 0.72rem;
+    color: #007185;
+    margin-left: 4px;
+}
+
+/* Price */
+.card-price {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #0f1111;
+    margin-bottom: 10px;
+}
+
+.old-price {
+    font-size: 0.75rem;
+    color: #888;
+    text-decoration: line-through;
+    margin-left: 6px;
+    font-weight: normal;
+}
+
+/* Add to cart button */
+.btn-cart {
+    display: block;
+    width: 100%;
+    background-color: #ffd814;
+    color: #111;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 0;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-cart:hover {
+    background-color: #f7ca00;
+}
+
+/* =====================================================
+   SECOND GRID  —  auto-fit + minmax() demo
+   ===================================================== */
+.portfolio-section2 {
+    padding: 10px 25px 40px;
+}
+
+.portfolio-section2 h2 {
+    font-size: 1.4rem;
+    color: #131921;
+    margin-bottom: 20px;
+    border-left: 5px solid #ff9900;
+    padding-left: 12px;
+}
+
+/* auto-fit + minmax: columns auto-fill based on min 230px */
+.product-grid-auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+.panel-4 {
+    background-color: #131921;
+    color: #dddddd;
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+/* =====================================================
+   MEDIA QUERIES  —  Responsive Design
+   ===================================================== */
+
+/* BREAKPOINT 1: Tablet — 2 columns */
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);   /* 2 columns on tablet */
+    }
+
+    .page-heading h1 {
+        font-size: 1.6rem;
+    }
+}
+
+/* BREAKPOINT 2: Mobile — 1 column */
+@media (max-width: 550px) {
+    .product-grid {
+        grid-template-columns: 1fr;              /* 1 column on mobile */
+    }
+
+    .product-grid-auto {
+        grid-template-columns: 1fr;
+    }
+
+    .page-heading h1 {
+        font-size: 1.3rem;
+    }
+
+    .portfolio-section,
+    .portfolio-section2 {
+        padding: 20px 12px;
+    }
+}

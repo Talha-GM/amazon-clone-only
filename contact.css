@@ -1,0 +1,376 @@
+/* =====================================================
+   contact.css  —  Page 6: Amazon About & Contact
+   Assignment 2 | Web Technologies
+   CSS Concepts: Combined Flexbox & CSS Grid,
+                 CSS3 Gradients, Shadows, border-radius,
+                 rgba(), Media Queries (Responsive)
+   ===================================================== */
+
+/* index.css handles the reset, body, a, p, and navbar styles.
+   This file contains styles specific to the Contact & About page. */
+
+/* =====================================================
+   1. PAGE HEADING BANNER
+   ===================================================== */
+.page-heading {
+    background: linear-gradient(135deg, #131921 0%, #232f3d 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 3px solid #ff9900;
+}
+
+.page-heading h1 {
+    font-size: 2rem;
+    color: #ff9900;
+    margin-bottom: 10px;
+}
+
+.page-heading p {
+    font-size: 1rem;
+    color: #cccccc;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* =====================================================
+   2. MAIN CONTAINER
+   ===================================================== */
+.contact-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+}
+
+/* Section Title with orange indicator bar */
+.section-title {
+    font-size: 1.4rem;
+    color: #131921;
+    margin-bottom: 24px;
+    border-left: 5px solid #ff9900;
+    padding-left: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title i {
+    color: #ff9900;
+}
+
+/* =====================================================
+   3. ABOUT SECTION — CSS GRID
+   Grid layout demonstrating:
+   display: grid, grid-template-columns, gap
+   ===================================================== */
+.about-section {
+    margin-bottom: 50px;
+}
+
+.about-intro-text {
+    font-size: 0.95rem;
+    color: #444444;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    background-color: #ffffff;
+    padding: 20px 24px;
+    border-radius: 6px;
+    border-left: 4px solid #131921;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* 4-card CSS Grid for store highlights */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.about-card {
+    background-color: #ffffff;
+    padding: 24px 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.about-icon {
+    font-size: 2.2rem;
+    color: #ff9900;
+    margin-bottom: 14px;
+}
+
+.about-card h3 {
+    font-size: 1.05rem;
+    color: #0f1111;
+    margin-bottom: 10px;
+}
+
+.about-card p {
+    font-size: 0.82rem;
+    color: #555555;
+    line-height: 1.5;
+}
+
+/* =====================================================
+   4. CONTACT SECTION — COMBINED CSS GRID & FLEXBOX
+   Desktop: 2 columns using CSS Grid (Form + Info)
+   ===================================================== */
+.contact-layout-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Contact Form Card */
+.contact-form-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form-card h2 {
+    font-size: 1.3rem;
+    color: #0f1111;
+    margin-bottom: 8px;
+}
+
+.contact-form-subtitle {
+    font-size: 0.85rem;
+    color: #666666;
+    margin-bottom: 22px;
+}
+
+/* Form using Flexbox for vertical flow */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0f1111;
+}
+
+.form-label span.req {
+    color: #d00;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    border: 1px solid #888c8c;
+    border-radius: 4px;
+    outline: none;
+    background-color: #ffffff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+    border-color: #e77600;
+    box-shadow: 0 0 5px rgba(228, 121, 17, 0.5);
+}
+
+/* Validation states */
+.form-control.input-error {
+    border-color: #cc0c39;
+    background-color: rgba(204, 12, 57, 0.03);
+}
+
+.form-control.input-valid {
+    border-color: #007600;
+    background-color: rgba(0, 118, 0, 0.02);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 110px;
+    font-family: inherit;
+}
+
+/* Error message label */
+.error-text {
+    font-size: 0.75rem;
+    color: #cc0c39;
+    font-weight: bold;
+    min-height: 16px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Submit Button */
+.btn-submit {
+    background: linear-gradient(180deg, #f7dfa5 0%, #f0c14b 100%);
+    color: #111111;
+    border: 1px solid #a88734;
+    border-radius: 4px;
+    padding: 11px 20px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.1s;
+    margin-top: 6px;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(180deg, #f5d78e 0%, #eeb933 100%);
+    border-color: #9c7e31;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+/* Success Message Box */
+.success-message-box {
+    display: none;
+    background-color: #f0fdf4;
+    border: 1px solid #86efac;
+    color: #166534;
+    padding: 16px 18px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.success-message-box i {
+    font-size: 1.1rem;
+    color: #16a34a;
+    margin-right: 6px;
+}
+
+/* =====================================================
+   5. CONTACT INFO SIDEBAR (Flexbox column of cards)
+   ===================================================== */
+.contact-info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.info-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.info-card-icon {
+    font-size: 1.6rem;
+    color: #ff9900;
+    background-color: rgba(255, 153, 0, 0.12);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.info-card-content h4 {
+    font-size: 0.95rem;
+    color: #0f1111;
+    margin-bottom: 4px;
+}
+
+.info-card-content p {
+    font-size: 0.82rem;
+    color: #555555;
+    line-height: 1.4;
+}
+
+.info-card-content a {
+    color: #007185;
+    font-weight: 600;
+}
+
+.info-card-content a:hover {
+    color: #c7511f;
+    text-decoration: underline;
+}
+
+/* =====================================================
+   6. FOOTER
+   ===================================================== */
+.panel-4 {
+    background-color: #131921;
+    color: #dddddd;
+    font-size: 0.75rem;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+/* =====================================================
+   7. MEDIA QUERIES (Responsive Design)
+   ===================================================== */
+
+/* Tablet Breakpoint (max-width: 992px) */
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: repeat(2, 1fr);   /* 2 columns on tablet */
+    }
+
+    .contact-layout-grid {
+        grid-template-columns: 1fr;              /* Stack form above info */
+        gap: 25px;
+    }
+}
+
+/* Mobile Breakpoint (max-width: 600px) */
+@media (max-width: 600px) {
+    .about-grid {
+        grid-template-columns: 1fr;              /* 1 column on mobile */
+    }
+
+    .contact-page-container {
+        padding: 24px 14px 40px;
+    }
+
+    .contact-form-card {
+        padding: 20px 16px;
+    }
+
+    .page-heading {
+        padding: 30px 15px;
+    }
+
+    .page-heading h1 {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+}
+
